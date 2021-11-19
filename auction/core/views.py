@@ -92,5 +92,3 @@ class Homeview(ListView):
             populateDatabase = myNewColl.insert_one(informationAboutIt)
             item.delete()
 
-#mandare token20 da recipient a creator per la vendita e mandare token721 da creator a customer, e mandare fee
-#da customer a addressforfee
