@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block head_title %}{{ block.super }} GetInfo {% endblock head_title %}
+{% block content %}
+
+<div style="margin-top:20px">
+    <h2 style="text-align:center">Faucet Stats</h2>
+    <br>
+    <h6 style="text-align:center">Contract Address is important: </h6>
+    <br>
+    <h6 style="text-align:center">Copy this address in 'import tokens' section, on your metamask wallet</h6>
+    <br>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Contract Name: {{contractName}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Contract Address: {{contractAddress}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Contract Symbol: {{contractSymbol}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Total Supply: {{totalSupply}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Faucet Balance: {{faucetBalance}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Faucet Address: {{faucet}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Balance Fee: {{balanceFee}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Recipient Balance: {{RecipientBalance}}</h5>
+    </div>
+</div>
+
+
+
+{% endblock content %}

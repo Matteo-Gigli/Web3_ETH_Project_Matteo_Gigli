@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block head_title %}{{ block.super }} Show Section {% endblock head_title %}
+
+{% block content %}
+<div class="card-header" style="margin-top:20px">
+    <div class="card my-3" style="text-align:center">
+            <img src="{{item.image.url}}" style="max-width:100%">
+        </div>
+    </div>
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Auction Info</h3>
+
+            <div class="card-group" style="margin-bottom: 50px">
+                <div class="card">
+                    <div class="card-body" style="text-align:center">
+                        <h5 class="card-title">Name:</h5>
+                        <p class="card-text"> {{item.name}} </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body" style="text-align:center">
+                        <h5 class="card-title">Bio:</h5>
+                        <p class="card-text"> {{item.bio}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-group" style="margin-bottom: 50px">
+                <div class="card">
+                    <div class="card-body" style="text-align:center">
+                        <h5 class="card-title">Minted From:</h5>
+                        <p class="card-text"> {{item.creatorAddress}} </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" style="text-align:center">
+                        <h5 class="card-title">Tx Hash:</h5>
+                        <p class="card-text"> {{item.itemHash}} </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card-group" style="margin-bottom: 50px">
+                <div class="card">
+                    <div class="card-body" style="text-align:center">
+                        <h5 class="card-title">Starting Token Price:</h5>
+                        <p class="card-text"> {{item.startingPrice}} </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body" style="text-align:center">
+                        <h5 class="card-title">Last Token Offer:</h5>
+                        <p>Last Offer for this Item is {{item.tokenOffer}} {{contractSymbol}}</p>
+                        <a href="{{item.get_url}}" class="btn btn-primary">Make An Offer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

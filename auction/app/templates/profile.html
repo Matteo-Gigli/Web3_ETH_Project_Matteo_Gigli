@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head_title %}{{ block.super }} Profile {% endblock head_title %}
+{% block content %}
+
+    <h2 style="text-align:center">Profile</h2>
+    <br>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Name: {{customerName}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Address: {{customerAddress}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Token Balance: {{tokenBalance}}</h5>
+    </div>
+
+    <div class="card-header" style="padding:20px">
+        <h5 style="text-align:center">Dollar Balance {{dollarBalance}}</h5>
+    </div>
+
+
+{% endblock content %}
