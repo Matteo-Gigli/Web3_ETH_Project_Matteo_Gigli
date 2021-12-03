@@ -28,10 +28,10 @@ Address for fee is for recive fee from auction operations
 
 <h3>🔗</h3>
 <h3>Settings</h3>
-First of all open your ganache and use from the fourth account to the last, to register.
+First of all, open your ganache and use from the fourth account to the last to register.
 When you took the address, copy the address private key and go on your Metamask wallet.
-Once there attach the private key to import the account.
-Once setted disconnect metamask.
+Once there, attach the private key to import the account.
+Once setted disconnect Metamask.
 Now you can open the site and register with the same Ganache address you chose.
 When you are in the homepage Connect your Metamask Wallet!
 
