@@ -26,6 +26,16 @@ Start to register from the fourth address on your Ganache
 Recipient is made to manage auctions token offer.
 Address for fee is for recive fee from auction operations
 
+<h3>🔗</h3>
+<h3>Settings</h3>
+First of all open your ganache and use from the fourth account to the last, to register.
+When you took the address, copy the address private key and go on your Metamask wallet.
+Once there attach the private key to import the account.
+Once setted disconnect metamask.
+Now you can open the site and register with the same Ganache address you chose.
+When you are in the homepage Connect your Metamask Wallet!
+
+
 <h3>🔨</h3>
 <h3>Site Fundamentals</h3><br>
 <strong>Creating with:</strong><br>
