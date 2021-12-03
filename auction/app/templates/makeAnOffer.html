@@ -13,9 +13,10 @@
         <form  method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" class="btn btn-info" value="Make Offer">
+            <input type="submit" class="btn btn-info" value="Make Offer" >
             {% endif %}
         </form>
     </div>
 </div>
+
 {% endblock content %}

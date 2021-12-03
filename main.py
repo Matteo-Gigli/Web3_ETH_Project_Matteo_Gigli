@@ -1,52 +1,34 @@
-def createNft(request):
-    customer = Customer.objects.get(user=request.user)
-    if request.method == 'POST':
-        form = NFT(request.POST, request.FILES)
-        if form.is_valid():
-            form = form.save(commit=False)
-            name = form.cleaned_data['name']
-            symbol = form.cleaned_data['symbol']
-            image = form.cleaned_data['image']
-            bio = form.cleaned_data['bio']
-            itemUrl = form.cleaned_data['itemUrl']
-            creatorAddress = form.cleaned_data['creatorAddress']
-            startingPrice = form.cleaned_data['startingPrice']
-            endingAuction = form.cleaned_data['endingAuction']
+#connettere infura
 
-            newItem = Item(
-                name=name,
-                symbol=symbol,
-                image=image,
-                bio=bio,
-                itemUrl=itemUrl,
-                creatorAddress=creatorAddress,
-                customer=customer,
-                startingPrice=startingPrice,
-                endingAuction=endingAuction
-            )
+#block.js =
 
-#This instruction is made for mint the token to the right address, instead anyone can mint a token for us.
+var Web3;
 
-            if newItem.customer.address != creatorAddress:
-                messages.error(request, 'You are not the address owner')
-                return redirect('/homepage/')
+async function Connect(){
+    await window.web3.currentProvider.enable();
 
-#Minting Our Token ERC721
+await window.ethereum.request({method: 'eth_requestAccounts'})
 
-            txHashForERC721 = contract.functions.Mintable(
-                customer.address,
-                itemUrl,
-                name,
-                symbol,
-            ).transact({'from': customer.address})
-            newItem.itemHash = w3.toHex(txHashForERC721)
-            customer.save()
-            newItem.save()
-            form.save()
-            messages.success(request, f'''{request.user}...You Minted A New Nft''')
-            return redirect('/homepage/')
+    web3 = new web3(window.web3.currentProvider);
+   }
 
-    else:
-        form = NFT()
-        context = {'form': form}
-        return render(request, 'createNft.html', context)
+-------------------------------------------------------------------------
+#metamask.html
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floats</title>
+    <link rel='stylesheet' href='styles.css'/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+    <script src="./block.js"></script>
+  </head>
+
+  <body>
+        <input id="connect" type="button" value="Connect" onclick="Connect()">
